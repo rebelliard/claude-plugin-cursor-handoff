@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+__pycache__/
+*.pyc
+
+lefthook-local.yml
+AGENTS.local.md
+.cursor/hooks/state/

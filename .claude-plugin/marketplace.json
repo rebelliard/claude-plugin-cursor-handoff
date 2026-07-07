@@ -1,0 +1,18 @@
+{
+  "name": "rebelliard",
+  "description": "Hand off well-scoped implementation work from Claude Code to the Cursor CLI (Composer) and review it from Claude.",
+  "owner": {
+    "name": "Rafael Belliard",
+    "email": "me@rafael.do"
+  },
+  "plugins": [
+    {
+      "name": "cursor-handoff",
+      "source": "./",
+      "description": "Hand off well-scoped implementation work from Claude Code to the Cursor CLI (Composer models, headless), then review the diff and iterate from Claude.",
+      "version": "0.1.0",
+      "category": "automation",
+      "keywords": ["cursor", "composer", "handoff", "delegation", "multi-agent"]
+    }
+  ]
+}

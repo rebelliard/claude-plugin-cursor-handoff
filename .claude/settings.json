@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/biome-format.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/markdown-format.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

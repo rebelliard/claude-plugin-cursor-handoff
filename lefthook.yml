@@ -1,0 +1,32 @@
+# Lefthook manages Git hooks declaratively.
+# Install with: pnpm hook:install
+# Skip once with: LEFTHOOK=0 git commit -m "message"
+
+lefthook: "pnpm exec lefthook"
+
+pre-commit:
+  skip:
+    - merge
+    - merge-commit
+    - rebase
+  parallel: true
+  commands:
+    format-biome:
+      run: bash .git-hooks/format-staged-files.sh {staged_files}
+      stage_fixed: true
+    format-markdown:
+      glob: "*.{md,mdx}"
+      run: bash .git-hooks/format-staged-markdown.sh {staged_files}
+      stage_fixed: true
+    shell-check:
+      glob: "*.sh"
+      run: pnpm shell:check
+    plugin-validate:
+      glob: "*.{json,md}"
+      run: pnpm plugin:validate
+
+pre-push:
+  parallel: true
+  commands:
+    check:
+      run: pnpm check

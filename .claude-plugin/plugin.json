@@ -1,0 +1,12 @@
+{
+  "name": "cursor-handoff",
+  "version": "0.1.0",
+  "description": "Hand off well-scoped implementation work from Claude Code to the Cursor CLI (Composer models, headless), then review the diff and iterate from Claude. Keeps the expensive orchestrator model for planning, taste, and review; delegates bulk execution to a fast, cheap executor.",
+  "author": {
+    "name": "Rafael Belliard"
+  },
+  "license": "MIT",
+  "keywords": ["cursor", "composer", "handoff", "delegation", "multi-agent"],
+  "commands": "./commands",
+  "skills": "./skills"
+}

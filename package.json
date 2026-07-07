@@ -1,0 +1,27 @@
+{
+  "name": "@rebelliard/claude-plugin-cursor-handoff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=24.13"
+  },
+  "scripts": {
+    "hook:install": "lefthook install",
+    "hook:precommit": "lefthook run pre-commit",
+    "hook:prepush": "lefthook run pre-push",
+    "check": "pnpm format:check && pnpm shell:check && pnpm test && pnpm plugin:validate",
+    "check:ci": "pnpm format:check && pnpm shell:check && pnpm test",
+    "format": "biome check --write . && prettier --config .git-hooks/prettierrc.markdown.json --write \"**/*.{md,mdx}\"",
+    "format:check": "biome ci . && prettier --config .git-hooks/prettierrc.markdown.json --check \"**/*.{md,mdx}\"",
+    "shell:check": "bash -n scripts/cursor-run.sh",
+    "test": "node --test tests/*.test.mjs",
+    "plugin:validate": "claude plugin validate ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.2",
+    "lefthook": "^2.1.9",
+    "prettier": "^3.9.4"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": ".claude/hooks/markdown-format.sh"
+      }
+    ],
+    "afterTabFileEdit": [
+      {
+        "command": ".claude/hooks/markdown-format.sh"
+      }
+    ]
+  }
+}
